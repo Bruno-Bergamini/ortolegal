@@ -11,13 +11,10 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ClinicResponseDTO {
     private UUID id;
-    private UUID serial;
-    private String model;
-    private String memory;
-    private String processor;
-    private String storage;
+    private String name;
+    private String address;
 
     public static ClinicResponseDTO transformToClinicResponseDTO(ClinicModel clinicModel) {
-        return new ClinicResponseDTO(clinicModel.getId(), clinicModel.getSerial(), clinicModel.getModel(), clinicModel.getMemory(), clinicModel.getProcessor(), clinicModel.getStorage());
+        return new ClinicResponseDTO(clinicModel.getId(), clinicModel.getName(), clinicModel.getAddress());
     }
 }

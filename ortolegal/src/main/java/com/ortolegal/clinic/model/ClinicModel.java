@@ -19,33 +19,19 @@ public class ClinicModel {
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID id;
 
-    @Type(type = "org.hibernate.type.UUIDCharType")
-    @Column(name = "serial", nullable = false, unique = true)
-    private UUID serial;
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
-    @Column(name = "model", nullable = false, unique = true)
-    private String model;
+    @Column(name = "address", nullable = false)
+    private String address;
 
-    @Column(name = "memory", nullable = false)
-    private String memory;
-
-    @Column(name = "processor", nullable = false)
-    private String processor;
-
-    @Column(name = "storage", nullable = false)
-    private String storage;
-
-    public ClinicModel(UUID serial, String model, String memory, String processor, String storage) {
-        this.serial = serial;
-        this.model = model;
-        this.memory = memory;
-        this.processor = processor;
-        this.storage = storage;
+    public ClinicModel(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 
     @PrePersist
     protected void onCreate() {
-        setSerial(java.util.UUID.randomUUID());
         setId(java.util.UUID.randomUUID());
     }
 }

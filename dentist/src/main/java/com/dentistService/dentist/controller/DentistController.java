@@ -25,7 +25,7 @@ public class DentistController {
 
     @PostMapping
     public ResponseEntity<DentistResponseDTO> create(@RequestBody DentistDTO dto) throws CustomException {
-         DentistModel dentistModel = dentistService.create(dto.transformToDentistModel());
+        DentistModel dentistModel = dentistService.create(dto.transformToDentistModel());
         DentistResponseDTO response = DentistResponseDTO.transformToDentistResponseDTO(dentistModel);
         return ResponseEntity.ok(response);
     }

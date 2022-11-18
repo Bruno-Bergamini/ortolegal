@@ -31,7 +31,7 @@ public class JWTSettings extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
-                .antMatchers("/h2-console/**", "/v3/api-docs/**", "/swagger-ui/**", "/api/dentist").permitAll()
+                .antMatchers("/h2-console/**", "/v3/api-docs/**", "/swagger-ui/**", "/api/dentist/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/login", "/api/user").permitAll()
                 .anyRequest().authenticated().and()
                 .addFilter(new JWTValidationFilter(authenticationManager()))

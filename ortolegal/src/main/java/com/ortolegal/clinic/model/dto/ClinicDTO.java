@@ -7,13 +7,10 @@ import java.util.UUID;
 
 @Getter
 public class ClinicDTO {
-    private UUID serial;
-    private String model;
-    private String memory;
-    private String processor;
-    private String storage;
+    private String name;
+    private String address;
 
     public ClinicModel transformToClinicModel() {
-        return new ClinicModel(serial, model, memory, processor, storage);
+        return new ClinicModel(name, address);
     }
 }

@@ -57,11 +57,8 @@ public class ClinicController {
     @PutMapping("/{id}")
     public ResponseEntity<ClinicResponseDTO> update(@PathVariable UUID id, @RequestBody ClinicDTO dto) throws CustomException {
         ClinicModel clinicModel = clinicService.getById(id);
-        clinicModel.setSerial(dto.getSerial());
-        clinicModel.setModel(dto.getModel());
-        clinicModel.setMemory(dto.getMemory());
-        clinicModel.setProcessor(dto.getProcessor());
-        clinicModel.setStorage(dto.getStorage());
+        clinicModel.setName(dto.getName());
+        clinicModel.setAddress(dto.getAddress());
 
         clinicService.create(clinicModel);
         ClinicResponseDTO response = ClinicResponseDTO.transformToClinicResponseDTO(clinicModel);

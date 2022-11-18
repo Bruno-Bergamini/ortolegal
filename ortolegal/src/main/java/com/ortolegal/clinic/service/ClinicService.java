@@ -19,7 +19,7 @@ public class ClinicService {
     }
 
     public ClinicModel create(ClinicModel clinicModel) throws CustomException {
-        if (clinicModel.getModel() == null || clinicModel.getModel().equals("") || clinicModel.getModel().length() > 300) {
+        if (clinicModel.getName() == null || clinicModel.getName().equals("") || clinicModel.getName().length() > 300) {
             throw new CustomException("ERROR", "Clinic model is wrong.");
         }
         return clinicRepository.save(clinicModel);
