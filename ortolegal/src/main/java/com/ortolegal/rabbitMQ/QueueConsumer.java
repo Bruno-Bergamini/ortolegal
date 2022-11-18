@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class QueueConsumer {
 
-    private final static String QUEUE_NAME = "securityDev";
+    private final static String QUEUE_NAME = "ortolegal";
 
     @RabbitListener(queues = {QUEUE_NAME})
     public void receive(@Payload String fileBody) {

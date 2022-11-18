@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SenderConfig {
 
-    private final static String QUEUE_NAME = "securityDev";
+    private final static String QUEUE_NAME = "ortolegal";
 
     @Bean
     public Queue queue() {

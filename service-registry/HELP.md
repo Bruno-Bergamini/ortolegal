@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.service-registry-security-development' is invalid and this project uses 'com.serviceregistrysecuritydevelopment' instead.
+* The original package name 'com.service-registry' is invalid and this project uses 'com.service_registry' instead.
 
 # Getting Started
 

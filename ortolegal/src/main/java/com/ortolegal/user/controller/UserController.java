@@ -67,10 +67,7 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<UserResponseDTO> update(@PathVariable UUID id, @RequestBody UserDTO dto) {
         UserModel user = userService.findById(id);
-        user.setUsername(dto.getUsername());
         user.setEmail(dto.getEmail());
-        user.setName(dto.getName());
-        user.setLastName(dto.getLastName());
         userService.save(user);
 
         UserResponseDTO response = UserResponseDTO.transformToUserResponseDTO(user);

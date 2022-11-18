@@ -11,18 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     @Bean
-    public Queue securityDevQueue() {
-        return new Queue("securityDev", true);
+    public Queue ortolegalQueue() {
+        return new Queue("ortolegal", true);
     }
 
     @Bean
     DirectExchange exchange() {
-        return new DirectExchange("securityDev-exchange");
+        return new DirectExchange("ortolegal-exchange");
     }
 
     @Bean
-    Binding securityDevBinding(Queue securityDevQueue, DirectExchange exchange) {
-        return BindingBuilder.bind(securityDevQueue).to(exchange).with("securityDev-routing-key");
+    Binding ortolegalBinding(Queue ortolegalQueue, DirectExchange exchange) {
+        return BindingBuilder.bind(ortolegalQueue).to(exchange).with("ortolegal-routing-key");
     }
 
 }
